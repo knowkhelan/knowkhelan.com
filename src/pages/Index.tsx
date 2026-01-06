@@ -3,6 +3,7 @@ import { RoleToggle } from '@/components/RoleToggle';
 import { HeroSection } from '@/components/HeroSection';
 import { ImpactTicker } from '@/components/ImpactTicker';
 import { BentoGrid } from '@/components/BentoGrid';
+import { Education } from '@/components/Education';
 import { BuildersLab } from '@/components/BuildersLab';
 import { ThoughtLeadership } from '@/components/ThoughtLeadership';
 import { Footer } from '@/components/Footer';
@@ -15,6 +16,7 @@ const Index = () => {
         <HeroSection />
         <ImpactTicker />
         <BentoGrid />
+        <Education />
         <BuildersLab />
         <ThoughtLeadership />
         <Footer />

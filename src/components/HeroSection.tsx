@@ -9,7 +9,7 @@ const heroContent = {
   },
   strategist: {
     headline: "Capital Allocation & Technical Diligence for AI.",
-    subhead: "Expert in Build-vs-Buy analysis, Ecosystem Partnerships, and Long-term GenAI Strategy.",
+    subhead: "Expert in Build-vs-Buy analysis and Long-term GenAI Strategy.",
   },
 };
 
@@ -18,13 +18,13 @@ export function HeroSection() {
   const content = isOperator ? heroContent.operator : heroContent.strategist;
 
   return (
-    <section className="min-h-[70vh] flex items-center justify-center bg-primary pt-24 pb-16">
+    <section className="min-h-[60vh] flex items-center justify-center bg-primary pt-20 pb-12">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-2xl mx-auto text-center">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="inline-block text-sm font-medium tracking-widest text-primary-foreground/60 mb-6"
+            className="inline-block text-xs font-medium tracking-widest text-primary-foreground/60 mb-4"
           >
             KHELAN MODI
           </motion.span>
@@ -36,7 +36,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-4"
+              className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground leading-tight mb-3"
             >
               {content.headline}
             </motion.h1>
@@ -49,13 +49,13 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="text-lg text-primary-foreground/70 max-w-xl mx-auto mb-8"
+              className="text-base text-primary-foreground/70 max-w-lg mx-auto mb-6"
             >
               {content.subhead}
             </motion.p>
           </AnimatePresence>
 
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-3">
             {[
               { icon: Linkedin, href: '#', label: 'LinkedIn' },
               { icon: Github, href: '#', label: 'GitHub' },
@@ -64,10 +64,10 @@ export function HeroSection() {
               <a
                 key={label}
                 href={href}
-                className="p-2.5 rounded-full text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+                className="p-2 rounded-full text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
                 aria-label={label}
               >
-                <Icon className="w-5 h-5" />
+                <Icon className="w-4 h-4" />
               </a>
             ))}
           </div>
