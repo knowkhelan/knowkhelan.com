@@ -5,12 +5,12 @@ import profileImage from '@/assets/khelan-profile.jpeg';
 
 const heroContent = {
   operator: {
-    headline: "Scaling High-Performance GenAI Infrastructure.",
-    subhead: "Founding PM at Microsoft. Scaled Azure Vector Search to 103M+ monthly requests.",
+    headline: "Builder at Heart. PM by Trade.",
+    subhead: "Founding PM at Microsoft, shipping GenAI and developer tools used by millions.",
   },
   strategist: {
-    headline: "Capital Allocation & Technical Diligence for AI.",
-    subhead: "Expert in Build-vs-Buy analysis and Long-term GenAI Strategy.",
+    headline: "Builder at Heart. Strategist by Instinct.",
+    subhead: "Bridging code and capital through technical diligence and long-term AI strategy.",
   },
 };
 
