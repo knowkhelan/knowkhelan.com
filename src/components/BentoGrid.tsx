@@ -1,6 +1,12 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRole } from '@/contexts/RoleContext';
-import { Database, ShoppingCart } from 'lucide-react';
+import { Database, ShoppingCart, ChevronDown } from 'lucide-react';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible';
+import { useState } from 'react';
 
 interface ExperienceSection {
   title: string;
@@ -110,9 +116,93 @@ const experiences: Experience[] = [
   },
 ];
 
-export function BentoGrid() {
+function ExperienceCard({ exp }: { exp: Experience }) {
   const { role, isOperator } = useRole();
+  const [isOpen, setIsOpen] = useState(false);
+  const content = isOperator ? exp.operator : exp.strategist;
+  const Icon = exp.icon;
 
+  return (
+    <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="rounded-lg border border-border bg-card overflow-hidden"
+      >
+        <CollapsibleTrigger className="w-full p-5 text-left hover:bg-secondary/30 transition-colors">
+          <div className="flex items-start gap-3">
+            <Icon className="w-4 h-4 text-accent mt-1 shrink-0" />
+            <div className="flex-1">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 className="font-display font-semibold text-card-foreground">
+                  {exp.title}
+                </h3>
+                <span className="text-xs text-muted-foreground">{exp.period}</span>
+              </div>
+              <p className="text-sm text-muted-foreground">{exp.company}</p>
+            </div>
+            <ChevronDown 
+              className={`w-4 h-4 text-muted-foreground shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+            />
+          </div>
+        </CollapsibleTrigger>
+
+        <CollapsibleContent>
+          <div className="px-5 pb-5 pt-2">
+            {exp.description && (
+              <p className="text-sm text-muted-foreground mb-4 pl-7">
+                {exp.description}
+              </p>
+            )}
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={role}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="pl-7"
+              >
+                {content.sections ? (
+                  <div className="space-y-4">
+                    {content.sections.map((section, idx) => (
+                      <div key={idx}>
+                        <h4 className="text-sm font-medium text-card-foreground mb-1.5">
+                          {section.title}
+                        </h4>
+                        <ul className="space-y-1">
+                          {section.points.map((point, i) => (
+                            <li key={i} className="text-sm text-muted-foreground flex gap-2">
+                              <span className="text-accent shrink-0">•</span>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <ul className="space-y-1.5">
+                    {content.points?.map((point, i) => (
+                      <li key={i} className="text-sm text-muted-foreground flex gap-2">
+                        <span className="text-accent shrink-0">•</span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </CollapsibleContent>
+      </motion.div>
+    </Collapsible>
+  );
+}
+
+export function BentoGrid() {
   return (
     <section className="py-10 bg-background">
       <div className="container mx-auto px-6">
@@ -121,79 +211,9 @@ export function BentoGrid() {
         </h2>
 
         <div className="space-y-4">
-          {experiences.map((exp) => {
-            const Icon = exp.icon;
-            const content = isOperator ? exp.operator : exp.strategist;
-
-            return (
-              <motion.div
-                key={exp.id}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="p-5 rounded-lg border border-border bg-card"
-              >
-                <div className="flex items-start gap-3 mb-3">
-                  <Icon className="w-4 h-4 text-accent mt-1 shrink-0" />
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <h3 className="font-display font-semibold text-card-foreground">
-                        {exp.title}
-                      </h3>
-                      <span className="text-xs text-muted-foreground">{exp.period}</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">{exp.company}</p>
-                  </div>
-                </div>
-
-                {exp.description && (
-                  <p className="text-sm text-muted-foreground mb-4 pl-7">
-                    {exp.description}
-                  </p>
-                )}
-
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={role}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="pl-7"
-                  >
-                    {content.sections ? (
-                      <div className="space-y-4">
-                        {content.sections.map((section, idx) => (
-                          <div key={idx}>
-                            <h4 className="text-sm font-medium text-card-foreground mb-1.5">
-                              {section.title}
-                            </h4>
-                            <ul className="space-y-1">
-                              {section.points.map((point, i) => (
-                                <li key={i} className="text-sm text-muted-foreground flex gap-2">
-                                  <span className="text-accent shrink-0">•</span>
-                                  {point}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    ) : (
-                      <ul className="space-y-1.5">
-                        {content.points?.map((point, i) => (
-                          <li key={i} className="text-sm text-muted-foreground flex gap-2">
-                            <span className="text-accent shrink-0">•</span>
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-              </motion.div>
-            );
-          })}
+          {experiences.map((exp) => (
+            <ExperienceCard key={exp.id} exp={exp} />
+          ))}
         </div>
       </div>
     </section>
