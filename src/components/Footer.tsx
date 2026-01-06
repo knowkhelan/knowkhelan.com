@@ -1,4 +1,4 @@
-import { Linkedin, Github, Mail } from 'lucide-react';
+import { Linkedin, Github, Twitter } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -9,13 +9,15 @@ export function Footer() {
 
           <div className="flex items-center gap-3">
             {[
-              { icon: Linkedin, href: '#', label: 'LinkedIn' },
-              { icon: Github, href: '#', label: 'GitHub' },
-              { icon: Mail, href: '#', label: 'Email' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/khelan-modi', label: 'LinkedIn' },
+              { icon: Github, href: 'https://github.com/knowkhelan', label: 'GitHub' },
+              { icon: Twitter, href: 'https://x.com/knowkhelan', label: 'X' },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors"
                 aria-label={label}
               >

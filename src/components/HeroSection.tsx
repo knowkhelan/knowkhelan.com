@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRole } from '@/contexts/RoleContext';
-import { Linkedin, Github, Mail } from 'lucide-react';
+import { Linkedin, Github, Twitter } from 'lucide-react';
 import profileImage from '@/assets/khelan-profile.jpeg';
 
 const heroContent = {
@@ -72,13 +72,15 @@ export function HeroSection() {
 
           <div className="flex items-center justify-center gap-3">
             {[
-              { icon: Linkedin, href: '#', label: 'LinkedIn' },
-              { icon: Github, href: '#', label: 'GitHub' },
-              { icon: Mail, href: '#', label: 'Email' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/khelan-modi', label: 'LinkedIn' },
+              { icon: Github, href: 'https://github.com/knowkhelan', label: 'GitHub' },
+              { icon: Twitter, href: 'https://x.com/knowkhelan', label: 'X' },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
                 aria-label={label}
               >
