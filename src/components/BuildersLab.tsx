@@ -24,7 +24,7 @@ export function BuildersLab() {
           Side Projects
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-4 max-w-3xl">
+        <div className="grid md:grid-cols-2 gap-4">
           {projects.map((project, index) => {
             const Icon = project.icon;
             

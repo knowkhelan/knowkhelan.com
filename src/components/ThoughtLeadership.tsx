@@ -15,7 +15,7 @@ export function ThoughtLeadership() {
           Speaking & Writing
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-4 max-w-3xl">
+        <div className="grid md:grid-cols-2 gap-4">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -31,7 +31,7 @@ export function Education() {
           Education
         </h2>
 
-        <div className="space-y-4 max-w-3xl">
+        <div className="space-y-4">
           {education.map((edu, index) => (
             <motion.div
               key={edu.degree}
