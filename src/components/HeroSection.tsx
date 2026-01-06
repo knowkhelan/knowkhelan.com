@@ -34,14 +34,14 @@ export function HeroSection() {
             <img
               src={profileImage}
               alt="Khelan Modi"
-              className="w-28 h-28 rounded-full mx-auto object-cover border-2 border-primary-foreground/20"
+              className="w-36 h-36 rounded-full mx-auto object-cover border-2 border-primary-foreground/20"
             />
           </motion.div>
 
           <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-4"
+            className="font-display text-3xl sm:text-4xl font-bold text-primary-foreground mb-4"
           >
             Khelan Modi
           </motion.h2>
@@ -53,7 +53,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="font-display text-lg sm:text-xl lg:text-2xl font-medium text-primary-foreground/90 leading-tight mb-3"
+              className="font-display text-xl sm:text-2xl lg:text-3xl font-medium text-primary-foreground/90 leading-tight mb-3"
             >
               {content.headline}
             </motion.h1>
@@ -66,7 +66,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="text-sm text-primary-foreground/60 max-w-lg mx-auto mb-6"
+              className="text-base text-primary-foreground/60 max-w-lg mx-auto mb-6"
             >
               {content.subhead}
             </motion.p>
@@ -91,24 +91,22 @@ export function HeroSection() {
             ))}
           </div>
 
-          {isOperator && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mt-6"
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mt-6"
+          >
+            <a
+              href={isOperator ? "/Khelan_Modi_Resume.pdf" : "/Khelan_Modi_Resume_CS.pdf"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 text-primary-foreground text-sm font-medium hover:bg-primary-foreground/20 transition-colors border border-primary-foreground/20"
             >
-              <a
-                href="/Khelan_Modi_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 text-primary-foreground text-sm font-medium hover:bg-primary-foreground/20 transition-colors border border-primary-foreground/20"
-              >
-                <FileText className="w-4 h-4" />
-                Download Resume
-              </a>
-            </motion.div>
-          )}
+              <FileText className="w-4 h-4" />
+              Download Resume
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>
