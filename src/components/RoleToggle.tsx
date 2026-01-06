@@ -24,7 +24,7 @@ export function RoleToggle() {
               isOperator ? 'text-primary-foreground' : 'text-muted-foreground'
             }`}
           >
-            Operator
+            Product
           </button>
 
           <button
@@ -33,7 +33,7 @@ export function RoleToggle() {
               !isOperator ? 'text-primary-foreground' : 'text-muted-foreground'
             }`}
           >
-            Strategist
+            Strategy
           </button>
         </div>
       </div>
