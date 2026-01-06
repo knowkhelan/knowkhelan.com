@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRole } from '@/contexts/RoleContext';
-import { Linkedin, Github, Twitter } from 'lucide-react';
+import { Linkedin, Github, Twitter, FileText } from 'lucide-react';
 import profileImage from '@/assets/khelan-profile.jpeg';
 import { FloatingWords } from './FloatingWords';
 
@@ -90,6 +90,25 @@ export function HeroSection() {
               </a>
             ))}
           </div>
+
+          {isOperator && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="mt-6"
+            >
+              <a
+                href="/Khelan_Modi_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 text-primary-foreground text-sm font-medium hover:bg-primary-foreground/20 transition-colors border border-primary-foreground/20"
+              >
+                <FileText className="w-4 h-4" />
+                Download Resume
+              </a>
+            </motion.div>
+          )}
         </div>
       </div>
     </section>
