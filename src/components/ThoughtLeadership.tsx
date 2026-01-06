@@ -49,14 +49,25 @@ export function ThoughtLeadership() {
               <h3 className="font-display font-semibold text-card-foreground text-sm">Writing</h3>
             </div>
 
-            <a href="#" className="block text-sm group">
-              <span className="font-medium text-card-foreground group-hover:text-accent transition-colors">
-                Product Quantization with DiskANN
-              </span>
-              <p className="text-muted-foreground text-xs mt-1">
-                Optimizing vector search performance
-              </p>
-            </a>
+            <div className="space-y-3">
+              <a href="https://devblogs.microsoft.com/cosmosdb/introducing-index-advisor-for-azure-documentdb-preview/" target="_blank" rel="noopener noreferrer" className="block text-sm group">
+                <span className="font-medium text-card-foreground group-hover:text-accent transition-colors">
+                  Introducing Index Advisor for Azure DocumentDB
+                </span>
+                <p className="text-muted-foreground text-xs mt-1">
+                  Microsoft DevBlogs
+                </p>
+              </a>
+
+              <a href="#" className="block text-sm group">
+                <span className="font-medium text-card-foreground group-hover:text-accent transition-colors">
+                  Product Quantization with DiskANN
+                </span>
+                <p className="text-muted-foreground text-xs mt-1">
+                  Optimizing vector search performance
+                </p>
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
