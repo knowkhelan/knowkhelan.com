@@ -21,7 +21,7 @@ export function BuildersLab() {
     <section className="py-10 bg-secondary/30">
       <div className="container mx-auto px-6">
         <h2 className="font-display text-xl font-bold text-foreground mb-6">
-          Side Projects
+          The Vibe Coding Lab
         </h2>
 
         <div className="grid md:grid-cols-2 gap-4">
