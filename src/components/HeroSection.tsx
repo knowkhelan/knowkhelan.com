@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useRole } from '@/contexts/RoleContext';
 import { Linkedin, Github, Twitter } from 'lucide-react';
 import profileImage from '@/assets/khelan-profile.jpeg';
+import { FloatingWords } from './FloatingWords';
 
 const heroContent = {
   operator: {
@@ -19,7 +20,8 @@ export function HeroSection() {
   const content = isOperator ? heroContent.operator : heroContent.strategist;
 
   return (
-    <section className="min-h-[60vh] flex items-center justify-center bg-primary pt-20 pb-12">
+    <section className="relative min-h-[60vh] flex items-center justify-center bg-primary pt-20 pb-12 overflow-hidden">
+      <FloatingWords />
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
           {/* Profile Image */}
