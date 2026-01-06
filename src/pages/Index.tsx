@@ -1,7 +1,6 @@
 import { RoleProvider } from '@/contexts/RoleContext';
 import { RoleToggle } from '@/components/RoleToggle';
 import { HeroSection } from '@/components/HeroSection';
-import { ImpactTicker } from '@/components/ImpactTicker';
 import { BentoGrid } from '@/components/BentoGrid';
 import { Education } from '@/components/Education';
 import { BuildersLab } from '@/components/BuildersLab';
@@ -14,7 +13,6 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <RoleToggle />
         <HeroSection />
-        <ImpactTicker />
         <BentoGrid />
         <Education />
         <BuildersLab />
