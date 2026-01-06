@@ -4,9 +4,9 @@ import { useMemo } from 'react';
 const words = [
   'GenAI', 'Vector Search', 'Product Strategy', 'Developer Tools',
   'VS Code', 'Azure', 'LLM', 'Full-Text Search', 'GTM',
-  'Build-vs-Buy', 'DiskANN', 'MongoDB', 'Python', 'React',
-  'Microsoft', 'Georgia Tech', 'AI/ML', 'Roadmap', 'OSS',
-  'Index Advisor', 'Enterprise', 'Scaling', 'HCI', 'Notion',
+  'Build-vs-Buy', 'DiskANN', 'Python', 'React', '0-1',
+  'Georgia Tech', 'AI/ML', 'Product Roadmap', 'OSS',
+  'Index Advisor', 'Enterprise', 'Scaling', 'HCI', 'Competitive Analysis',
 ];
 
 interface FloatingWord {
