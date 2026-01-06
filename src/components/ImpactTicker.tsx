@@ -21,7 +21,7 @@ export function ImpactTicker() {
   const currentMetrics = isOperator ? metrics.operator : metrics.strategist;
 
   return (
-    <section className="py-8 border-b border-border">
+    <section className="py-6 border-b border-border">
       <div className="container mx-auto px-6">
         <AnimatePresence mode="wait">
           <motion.div
@@ -30,12 +30,12 @@ export function ImpactTicker() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
           >
             {currentMetrics.map((metric) => (
               <div key={metric.label}>
-                <div className="font-display text-2xl font-bold text-foreground">{metric.value}</div>
-                <div className="text-sm text-muted-foreground">{metric.label}</div>
+                <div className="font-display text-xl font-bold text-foreground">{metric.value}</div>
+                <div className="text-xs text-muted-foreground">{metric.label}</div>
               </div>
             ))}
           </motion.div>

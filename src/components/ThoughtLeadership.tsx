@@ -9,26 +9,25 @@ const speaking = [
 
 export function ThoughtLeadership() {
   return (
-    <section className="py-16 bg-background">
+    <section className="py-10 bg-background">
       <div className="container mx-auto px-6">
-        <h2 className="font-display text-2xl font-bold text-foreground mb-8">
+        <h2 className="font-display text-xl font-bold text-foreground mb-6">
           Speaking & Writing
         </h2>
 
-        <div className="max-w-4xl grid md:grid-cols-2 gap-6">
-          {/* Speaking */}
+        <div className="grid md:grid-cols-2 gap-4 max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-6 rounded-xl border border-border bg-card"
+            className="p-5 rounded-lg border border-border bg-card"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <Mic className="w-5 h-5 text-accent" />
-              <h3 className="font-display font-semibold text-card-foreground">Speaking</h3>
+            <div className="flex items-center gap-2 mb-3">
+              <Mic className="w-4 h-4 text-accent" />
+              <h3 className="font-display font-semibold text-card-foreground text-sm">Speaking</h3>
             </div>
 
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {speaking.map((item) => (
                 <li key={item.event} className="text-sm">
                   <span className="font-medium text-card-foreground">{item.event}</span>
@@ -38,25 +37,24 @@ export function ThoughtLeadership() {
             </ul>
           </motion.div>
 
-          {/* Writing */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="p-6 rounded-xl border border-border bg-card"
+            className="p-5 rounded-lg border border-border bg-card"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <PenTool className="w-5 h-5 text-accent" />
-              <h3 className="font-display font-semibold text-card-foreground">Writing</h3>
+            <div className="flex items-center gap-2 mb-3">
+              <PenTool className="w-4 h-4 text-accent" />
+              <h3 className="font-display font-semibold text-card-foreground text-sm">Writing</h3>
             </div>
 
             <a href="#" className="block text-sm group">
               <span className="font-medium text-card-foreground group-hover:text-accent transition-colors">
                 Product Quantization with DiskANN
               </span>
-              <p className="text-muted-foreground mt-1">
-                Deep-dive on optimizing vector search performance
+              <p className="text-muted-foreground text-xs mt-1">
+                Optimizing vector search performance
               </p>
             </a>
           </motion.div>
