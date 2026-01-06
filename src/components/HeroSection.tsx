@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRole } from '@/contexts/RoleContext';
 import { Linkedin, Github, Mail } from 'lucide-react';
+import profileImage from '@/assets/khelan-profile.jpeg';
 
 const heroContent = {
   operator: {
@@ -21,13 +22,27 @@ export function HeroSection() {
     <section className="min-h-[60vh] flex items-center justify-center bg-primary pt-20 pb-12">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <motion.span
+          {/* Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
+            className="mb-5"
+          >
+            <img
+              src={profileImage}
+              alt="Khelan Modi"
+              className="w-28 h-28 rounded-full mx-auto object-cover border-2 border-primary-foreground/20"
+            />
+          </motion.div>
+
+          <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="inline-block text-xs font-medium tracking-widest text-primary-foreground/60 mb-4"
+            className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-4"
           >
-            KHELAN MODI
-          </motion.span>
+            Khelan Modi
+          </motion.h2>
 
           <AnimatePresence mode="wait">
             <motion.h1
@@ -36,7 +51,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground leading-tight mb-3"
+              className="font-display text-lg sm:text-xl lg:text-2xl font-medium text-primary-foreground/90 leading-tight mb-3"
             >
               {content.headline}
             </motion.h1>
@@ -49,7 +64,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="text-base text-primary-foreground/70 max-w-lg mx-auto mb-6"
+              className="text-sm text-primary-foreground/60 max-w-lg mx-auto mb-6"
             >
               {content.subhead}
             </motion.p>
