@@ -57,7 +57,7 @@ export function BentoGrid() {
           Experience
         </h2>
 
-        <div className="space-y-4 max-w-3xl">
+        <div className="space-y-4">
           {experiences.map((exp) => {
             const Icon = exp.icon;
             const content = isOperator ? exp.operator : exp.strategist;
