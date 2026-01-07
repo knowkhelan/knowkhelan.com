@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRole } from '@/contexts/RoleContext';
-import { Database, ShoppingCart, ChevronDown } from 'lucide-react';
+import { Database, ShoppingCart, ChevronDown, Brain } from 'lucide-react';
 import {
   Collapsible,
   CollapsibleContent,
@@ -19,6 +19,7 @@ interface Experience {
   title: string;
   company: string;
   period: string;
+  url?: string;
   description?: string;
   operator: {
     sections?: ExperienceSection[];
@@ -31,6 +32,29 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
+  {
+    id: 'mentaltabs',
+    icon: Brain,
+    title: 'Co-Founder',
+    company: 'MentalTabs',
+    period: '2025 – Present',
+    url: 'https://mentaltabs.co/',
+    description: 'MentalTabs is a friction-free capture tool designed to eliminate context switching. By integrating with the apps you already use—WhatsApp, Slack, and Email—we allow users to dump raw thoughts without breaking their flow. Our AI instantly processes these inputs into clear actions and reflections inside Notion, turning mental clutter into organized productivity.',
+    operator: {
+      points: [
+        'Built friction-free capture tool integrated with WhatsApp, Slack, and Email',
+        'Designed AI-powered system that processes raw thoughts into organized actions in Notion',
+        'Eliminated context switching for users managing multiple workflows',
+      ],
+    },
+    strategist: {
+      points: [
+        'Identified market gap in thought capture and mental organization tools',
+        'Designed product strategy around reducing friction in existing workflows',
+        'Positioned MentalTabs as solution for context-switching productivity drain',
+      ],
+    },
+  },
   {
     id: 'microsoft',
     icon: Database,
@@ -140,7 +164,19 @@ function ExperienceCard({ exp }: { exp: Experience }) {
                 </h3>
                 <span className="text-xs text-muted-foreground">{exp.period}</span>
               </div>
-              <p className="text-sm text-muted-foreground">{exp.company}</p>
+              {exp.url ? (
+                <a
+                  href={exp.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {exp.company}
+                </a>
+              ) : (
+                <p className="text-sm text-muted-foreground">{exp.company}</p>
+              )}
             </div>
             <ChevronDown 
               className={`w-4 h-4 text-muted-foreground shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
