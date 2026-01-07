@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRole } from '@/contexts/RoleContext';
-import { Linkedin, Github, Twitter, FileText } from 'lucide-react';
+import { Linkedin, Github, Twitter, FileText, Calendar } from 'lucide-react';
 import profileImage from '@/assets/khelan-profile.jpeg';
 import { FloatingWords } from './FloatingWords';
 
@@ -77,6 +77,7 @@ export function HeroSection() {
               { icon: Linkedin, href: 'https://www.linkedin.com/in/khelan-modi', label: 'LinkedIn' },
               { icon: Github, href: 'https://github.com/knowkhelan', label: 'GitHub' },
               { icon: Twitter, href: 'https://x.com/knowkhelan', label: 'X' },
+              { icon: Calendar, href: 'https://topmate.io/khelan_modi/', label: 'Topmate' },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
