@@ -5,12 +5,14 @@ const projects = [
   {
     icon: Inbox,
     title: 'Inbox-to-Notion',
+    url: 'https://github.com/knowkhelan/Inbox-to-Notion',
     description: 'Pulls tasks from Slack, Outlook, Teams, WhatsApp → enriches with AI titles/priorities → syncs to Notion.',
     highlights: ['No context switching', 'AI formatting', 'Centralized hub'],
   },
   {
     icon: Newspaper,
     title: 'AI & Tech News Scraper',
+    url: 'https://github.com/knowkhelan/daily-ai-news',
     description: 'Python scraper sending daily AI news to WhatsApp via Twilio. Sources: TechCrunch, MIT Tech Review, The Verge.',
     highlights: ['RSS parsing', 'WhatsApp delivery', 'Auto-archiving'],
   },
@@ -39,9 +41,14 @@ export function BuildersLab() {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <Icon className="w-4 h-4 text-accent" />
-                  <h3 className="font-display font-semibold text-card-foreground text-sm">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-display font-semibold text-card-foreground text-sm hover:text-accent transition-colors"
+                  >
                     {project.title}
-                  </h3>
+                  </a>
                 </div>
 
                 <p className="text-sm text-muted-foreground mb-3">
