@@ -99,7 +99,7 @@ export function HeroSection() {
             className="mt-6"
           >
             <a
-              href={isOperator ? "/Khelan_Modi_Resume.pdf" : "/Khelan_Modi_Resume_CS.pdf"}
+              href={isOperator ? "/Khelan Modi Resume.pdf" : "/Khelan_Modi_Resume_CS.pdf"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 text-primary-foreground text-sm font-medium hover:bg-primary-foreground/20 transition-colors border border-primary-foreground/20"
