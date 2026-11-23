@@ -9,7 +9,7 @@ export function Footer() {
 
           <div className="flex items-center gap-3">
             {[
-              { icon: Linkedin, href: 'https://www.linkedin.com/in/khelan-modi', label: 'LinkedIn' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/knowkhelan', label: 'LinkedIn' },
               { icon: Github, href: 'https://github.com/knowkhelan', label: 'GitHub' },
               { icon: Twitter, href: 'https://x.com/knowkhelan', label: 'X' },
             ].map(({ icon: Icon, href, label }) => (

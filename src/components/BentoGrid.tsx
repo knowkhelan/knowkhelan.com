@@ -33,59 +33,37 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    id: 'mentaltabs',
-    icon: Brain,
-    title: 'Co-Founder',
-    company: 'MentalTabs',
-    period: '2025 – Present',
-    url: 'https://mentaltabs.co/',
-    description: 'MentalTabs is a friction-free capture tool designed to eliminate context switching. By integrating with the apps you already use—WhatsApp, Slack, and Email—we allow users to dump raw thoughts without breaking their flow. Our AI instantly processes these inputs into clear actions and reflections inside Notion, turning mental clutter into organized productivity.',
-    operator: {
-      points: [
-        'Built friction-free capture tool integrated with WhatsApp, Slack, and Email',
-        'Designed AI-powered system that processes raw thoughts into organized actions in Notion',
-        'Eliminated context switching for users managing multiple workflows',
-      ],
-    },
-    strategist: {
-      points: [
-        'Identified market gap in thought capture and mental organization tools',
-        'Designed product strategy around reducing friction in existing workflows',
-        'Positioned MentalTabs as solution for context-switching productivity drain',
-      ],
-    },
-  },
-  {
     id: 'microsoft',
     icon: Database,
-    title: 'Founding PM – Azure DocumentDB',
+    title: 'Senior Product Manager – Azure Cosmos DB',
     company: 'Microsoft',
-    period: '2022 – Present',
-    description: 'Leading developer tooling and GenAI capabilities for Azure DocumentDB (formerly vCore-based Azure Cosmos DB for MongoDB) and the open-source DocumentDB ecosystem. Responsible for product strategy, roadmap execution, and GTM across AI workloads, vector search, and indexing at enterprise scale.',
+    period: '2023 – Present',
+    description: 'Senior PM on Azure Cosmos DB since August 2026, owning product strategy for Microsoft-Embedding-1, a multimodal embedding model. Previously PM 1 & 2 on Azure DocumentDB (July 2023 – July 2026), where I led search, AI, and developer tooling from preview to scale.',
     operator: {
       sections: [
         {
-          title: 'AI & Search Systems',
+          title: 'AI Model Quality & Evaluation',
           points: [
-            'Scaled vector search from 1M → 100M+ monthly requests by driving a customer-driven roadmap from Public Preview to GA',
-            'Benchmarked against competitors (MongoDB), achieving 11× higher RPS and 14× lower latency',
-            'Launched full-text search revenue stream via OSS-based approach, generating ~$175K/month in Preview',
-            'Built the first LLM-based Index Advisor, reducing support load and boosting customer retention',
+            'Own product strategy for Microsoft-Embedding-1, a multimodal embedding model; established retrieval evaluation across all 15 BEIR tasks and ViDoRe V3 (66.24, #1 on the leaderboard)',
+            'Partner with AI researchers and engineers on retrieval quality, throughput, p50/p90 latency, and token efficiency to shape training priorities, pricing, and go-to-market',
+            'Led 0→1 development of an AI-powered Index Advisor, built on an evaluation set of anonymized customer query patterns',
+            'Positioned DocumentDB as the native data tier for agentic apps with an MCP server and toolkit, plus LangChain, LangGraph, LlamaIndex, and Semantic Kernel integrations',
           ],
         },
         {
-          title: 'Developer Tooling (VS Code & Azure Portal)',
+          title: 'Search & Retrieval Systems',
           points: [
-            'PM owner for DocumentDB for VS Code—led 0→1 development across data visualization, migration tooling, and LLM-powered insights',
-            'Delivered Azure Portal enhancements with one-click activation for 10+ preview features',
+            'Grew vector search from 1M → 150M+ monthly requests',
+            'Used production telemetry to target indexing and retrieval bottlenecks, delivering 11× higher throughput and 14× lower latency in competitive benchmarks',
+            'Launched full-text search 0→1 (BM25, fuzzy matching, compound queries), removing the need for separate search clusters and generating ~$500K/month in preview revenue',
           ],
         },
         {
-          title: 'Go-to-Market & Evangelism',
+          title: 'Customer Impact & Go-to-Market',
           points: [
-            'Owned end-to-end GTM for AI and developer features including positioning, launch strategy, and documentation',
-            'Delivered technical deep dives at 15+ conferences (FabCon, AI Tour, Build 2025) and YouTube (10K+ views)',
-            'Drove 18% increase in documentation traffic through SEO-optimized content',
+            'Led enterprise search migrations from Cassandra + Solr and MongoDB Atlas Search to DocumentDB full-text search',
+            'Partnered with KPMG Australia on KymChat, a GenAI app serving 7,000+ employees, improving retrieval accuracy from 50% to 90%+',
+            'Led GTM across Sales, Marketing, and Engineering: 15+ conference talks, 18% docs traffic growth, and a VS Code extension at 10K+ DAUs (NPS 45); mentored 3 new PMs',
           ],
         },
       ],
@@ -114,6 +92,29 @@ const experiences: Experience[] = [
             'Built developer evangelism program across conferences, content, and direct customer engagement',
           ],
         },
+      ],
+    },
+  },
+  {
+    id: 'mentaltabs',
+    icon: Brain,
+    title: 'Co-Founder',
+    company: 'MentalTabs',
+    period: 'Oct 2025 – Apr 2026',
+    url: 'https://mentaltabs.co/',
+    description: 'MentalTabs was an AI-powered capture tool that let people dump raw thoughts from the apps they already use (WhatsApp, Slack, and Email) and turned them into organized actions and reflections in Notion. We reached 25 paying customers, then chose to wind it down based on competitive dynamics and product differentiation.',
+    operator: {
+      points: [
+        'Built an AI-powered productivity SaaS integrating WhatsApp, Slack, Email, and Notion',
+        'Owned product strategy, customer discovery, and 0→1 development',
+        'Acquired 25 paying customers before deciding to discontinue based on competitive dynamics and differentiation',
+      ],
+    },
+    strategist: {
+      points: [
+        'Identified market gap in thought capture and mental organization tools',
+        'Designed product strategy around reducing friction in existing workflows',
+        'Positioned MentalTabs as solution for context-switching productivity drain',
       ],
     },
   },

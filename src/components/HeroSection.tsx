@@ -7,7 +7,7 @@ import { FloatingWords } from './FloatingWords';
 const heroContent = {
   operator: {
     headline: "Builder at Heart. PM by Trade.",
-    subhead: "Founding PM at Microsoft, shipping GenAI and developer tools used by millions.",
+    subhead: "Senior PM at Microsoft, building AI models, search, and developer tools at scale.",
   },
   strategist: {
     headline: "Builder at Heart. Strategist by Instinct.",
@@ -74,7 +74,7 @@ export function HeroSection() {
 
           <div className="flex items-center justify-center gap-3">
             {[
-              { icon: Linkedin, href: 'https://www.linkedin.com/in/khelan-modi', label: 'LinkedIn' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/knowkhelan', label: 'LinkedIn' },
               { icon: Github, href: 'https://github.com/knowkhelan', label: 'GitHub' },
               { icon: Twitter, href: 'https://x.com/knowkhelan', label: 'X' },
               { icon: Calendar, href: 'https://topmate.io/khelan_modi/', label: 'Topmate' },
